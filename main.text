@@ -1,0 +1,113 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{csquotes}
+\usepackage{indentfirst}
+\usepackage{seqsplit}
+\usepackage{float}
+
+\lstset{
+    basicstyle=\tiny,  %or \small or \footnotesize etc.
+    breaklines=true, 
+    frame=single,
+    numbers=left,
+    language=C
+}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ left=20mm,
+ right=10mm,
+ top=10mm,
+ bottom=20mm,
+ }
+
+
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries}{\thechapter.}{1em}{\Huge}
+\titlespacing*{\chapter}{0pt}{-19pt}{0pt}
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	{\scshape\LARGE Innopolis University \par}
+	\vspace{1cm}
+	{\huge\bfseries Secure Systems and Networks\par}
+	{\huge\bfseries Research project\par}
+	\vspace{2cm}
+	\vfill
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Submitted By:}
+\\Vasiliy Podtikhov,
+\\Bulat Saifullin,
+\\Timur Samigullin
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Submitted To:}
+\\Rasheed Hussain
+\\Azat Safin
+\\Konstantin Urysov
+\\Kirill Saltanov
+\end{flushright}
+\end{minipage}\\[1cm]
+
+% If you don't want a supervisor, uncomment the two lines below and remove the section above
+%\Large \emph{Author:}\\
+%John \textsc{Smith}\\[3cm] % Your name
+
+%	supervised by\par
+%	Kirill Saltanov
+	\vfill
+	{\large \today\par}
+\end{titlepage}
+
+\chapter{Adstract}
+In modern day social networks become widely used. Practically almost all employers using them. But they can be used to formating public opinion in way not acceptable by company, or by accident share some confidentially information. This often happened because ordinary employee don't unaware of global company goals.
+
+In this work we will try to link a social identity to an IP address by analysis of user traffics. This will help us to establish leakage, find disgruntled employees and change company politics to prevent this situations.
+
+\chapter{Introduction}
+Mapping IP address to account on social network is generally believed to be difficult for an individual with no dedicated infrastructure or privileged information. Social networks owners such as Vk.com and Facebook.com have this information, but they always hide it except in the case of a legal decision. But this information may be very handy in big corporations. In average 60% of employee actively use social networks [1]. And sometime employees post trade secret in social network, usually they use fake name. But if the employee go in  account while he in the corporation's network mapping IP address to account on social network, can help us to find him.
+
+\chapter{Related Work}
+Today we widely used Netflow analysis for security reasons [2][3]. But only recently science works was introduced whom main goal was – determine users action in social networks [4][5]. Unfortunately method who helped us to identify user never was introduced. In this paper we tried to find a solution for this problem.
+
+\chapter{Research question}
+\begin{itemize}
+	\item{Find connection between user traffic and profile changes.}
+	\item{What sending data affects changes in profile?}
+	\item{How to analysis user's net-flow traffics?}
+	\item{How to analysis a profile in social network?}
+\end{itemize}
+
+\chapter{Methodologies}
+Analysis of netflow in corporation environment. We tried to check if connection was established in period of time and check presence of person in this time period on site.
+
+\chapter{Our program}
+\section{Common things}
+
+\input{vk}
+\input{instagram}
+\input{facebook}
+\chapter{Results}
+\chapter{Our programms}
+\chapter{Conclusions}
+\chapter{Acknowledgments}
+
+\end{document}
+
+
+
