@@ -17,17 +17,16 @@
     breaklines=true, 
     frame=single,
     numbers=left,
-    language=C
 }
 
 \usepackage{geometry}
- \geometry{
- a4paper,
- left=20mm,
- right=10mm,
- top=10mm,
- bottom=20mm,
- }
+\geometry{
+	a4paper,
+	left=20mm,
+	right=10mm,
+	top=10mm,
+	bottom=20mm,
+}
 
 
 \titleformat{\chapter}[block]
@@ -102,7 +101,7 @@ NetFlow is a feature that was introduced on Cisco routers that provides the abil
 	\item{Analysis application: analyzes received flow data in the context of intrusion detection or traffic profiling, for example.}
 \end{itemize}
 
-We analysed netflow dumps in corporation environment and tried to check if connection was established in period of time and check presence of person in this time period on site. 
+We analysed netflow dumps in corporation environment and tried to check if connection was established in period of time and check presence of person in this time period on site. The main purpose is to find correlations between posted time and netflow traffic.
 
 
 \chapter{Our program}
