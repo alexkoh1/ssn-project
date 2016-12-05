@@ -84,13 +84,13 @@ In modern day social networks become widely used. Practically almost all employe
 In this work we will try to link a social identity to an IP address by analysis of user traffics. This will help us to establish leakage, find disgruntled employees and change company politics to prevent this situations.
 \end{abstract}
 
-\chapter{Introduction}
+\section{Introduction}
 Mapping IP address to account on social network is generally believed to be difficult for an individual with no dedicated infrastructure or privileged information. Social networks owners such as Vk.com and Facebook.com have this information, but they always hide it except in the case of a legal decision. But this information may be very handy in big corporations. In average 60\% of employee actively use social networks [1]. And sometime employees post trade secret in social network, usually they use fake name. But if the employee go in  account while he in the corporation's network mapping IP address to account on social network, can help us to find him.
 
-\chapter{Related Work}
+\section{Related Work}
 Today we widely used Netflow analysis for security reasons [2][3]. But only recently science works was introduced whom main goal was – determine users action in social networks [4][5]. Unfortunately method who helped us to identify user never was introduced. In this paper we tried to find a solution for this problem.
 
-\chapter{Research question}
+\section{Research question}
 \begin{itemize}
 	\item{Find connection between user traffic and profile changes.}
 	\item{What sending data affects changes in profile?}
@@ -99,7 +99,7 @@ Today we widely used Netflow analysis for security reasons [2][3]. But only rece
 \end{itemize}ls
 
 
-\chapter{Methodologies}
+\section{Methodologies}
 NetFlow is a feature that was introduced on Cisco routers that provides the ability to collect IP network traffic as it enters or exits an interface. By analyzing the data provided by NetFlow, a network administrator can determine things such as the source and destination of traffic, class of service, and the causes of congestion. A typical flow monitoring setup (using NetFlow) consists of three main components:\cite{methodologies1}
 \begin{itemize}
 	\item{Flow exporter: aggregates packets into flows and exports flow records towards one or more flow collectors.}
@@ -110,16 +110,16 @@ NetFlow is a feature that was introduced on Cisco routers that provides the abil
 We analysed netflow dumps in corporation environment and tried to check if connection was established in period of time and check presence of person in this time period on site. The main purpose is to find correlations between posted time and netflow traffic.
 
 
-\chapter{Common things}
+\section{Common things}
 
 \input{vk}
 \input{instagram}
 \input{facebook}
 
-\chapter{Results}
-\chapter{Our programms}
-\chapter{Conclusions}
-\chapter{Acknowledgments}
+\section{Results}
+\section{Our programms}
+\section{Conclusions}
+\section{Acknowledgments}
 \input{bibliography}
 \end{document}
 
