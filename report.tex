@@ -12,6 +12,7 @@
 \usepackage{seqsplit}
 \usepackage{float}
 \usepackage[colorlinks,allcolors=black]{hyperref} %чтобы ссылки работали 
+\usepackage{courier}
 
 \makeatletter
 \renewcommand{\thesection}{%
@@ -19,6 +20,7 @@
   \else \thechapter.\@arabic\c@section
   \fi
 }
+\renewcommand{\thefigure}{\thesection.\arabic{figure}} %не разобрался с renewcommand выше, написал свою (Б)
 \makeatother
 
 \lstset{
