@@ -11,6 +11,9 @@
 \usepackage{indentfirst}
 \usepackage{seqsplit}
 \usepackage{float}
+\usepackage[colorlinks,urlcolor=blue]{hyperref} %чтобы ссылки работали 
+
+
 
 \lstset{
     basicstyle=\tiny,  %or \small or \footnotesize etc.
@@ -73,6 +76,8 @@
 	{\large \today\par}
 \end{titlepage}
 
+\tableofcontents  % можно убрать
+
 \begin{abstract}
 In modern day social networks become widely used. Practically almost all employers using them. But they can be used to formating public opinion in way not acceptable by company, or by accident share some confidentially information. This often happened because ordinary employee don't unaware of global company goals.
 
@@ -91,7 +96,8 @@ Today we widely used Netflow analysis for security reasons [2][3]. But only rece
 	\item{What sending data affects changes in profile?}
 	\item{How to analysis user's net-flow traffics?}
 	\item{How to analysis a profile in social network?}
-\end{itemize}
+\end{itemize}ls
+
 
 \chapter{Methodologies}
 NetFlow is a feature that was introduced on Cisco routers that provides the ability to collect IP network traffic as it enters or exits an interface. By analyzing the data provided by NetFlow, a network administrator can determine things such as the source and destination of traffic, class of service, and the causes of congestion. A typical flow monitoring setup (using NetFlow) consists of three main components:\cite{methodologies1}
@@ -104,12 +110,12 @@ NetFlow is a feature that was introduced on Cisco routers that provides the abil
 We analysed netflow dumps in corporation environment and tried to check if connection was established in period of time and check presence of person in this time period on site. The main purpose is to find correlations between posted time and netflow traffic.
 
 
-\chapter{Our program}
-\section{Common things}
+\chapter{Common things}
 
 \input{vk}
 \input{instagram}
 \input{facebook}
+
 \chapter{Results}
 \chapter{Our programms}
 \chapter{Conclusions}
