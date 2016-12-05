@@ -11,9 +11,15 @@
 \usepackage{indentfirst}
 \usepackage{seqsplit}
 \usepackage{float}
-\usepackage[colorlinks,urlcolor=blue]{hyperref} %чтобы ссылки работали 
+\usepackage[colorlinks,allcolors=black]{hyperref} %чтобы ссылки работали 
 
-
+\makeatletter
+\renewcommand{\thesection}{%
+  \ifnum\c@chapter<1 \@arabic\c@section
+  \else \thechapter.\@arabic\c@section
+  \fi
+}
+\makeatother
 
 \lstset{
     basicstyle=\tiny,  %or \small or \footnotesize etc.
