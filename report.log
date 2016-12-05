@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.22)  5 DEC 2016 16:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.22)  5 DEC 2016 16:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -644,11 +644,11 @@ Package pdftex.def Info: images/instagram/1.png used on input line 21.
 (pdftex.def)             Requested size: 341.43306pt x 130.6731pt.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 29.
-) (./facebook.tex [7
+) (./facebook.tex) [7
 
  <./images/instagram/1.png>]
 Chapter 8.
-) [8
+[8
 
 ]
 Chapter 9.
@@ -660,43 +660,49 @@ Chapter 10.
 
 ]
 Chapter 11.
-[11
-
-]
-Chapter 12.
-(./bibliography.tex [12
+(./bibliography.tex [11
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 125.
- [13
+ [12
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 125.
  (./report.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 125.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 125.
-Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: AD7A97D342DEB12CE619C833E1B35323;725.
+
+
+Package rerunfilecheck Warning: File `report.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `report.out':
+(rerunfilecheck)             Before: AD7A97D342DEB12CE619C833E1B35323;725
+(rerunfilecheck)             After:  839CBE27A1F45B1AECD7C89D2652A96E;956.
  ) 
 Here is how much of TeX's memory you used:
- 10807 strings out of 494910
- 161524 string characters out of 6179836
- 301711 words of memory out of 5000000
- 13931 multiletter control sequences out of 15000+600000
- 9517 words of font info for 34 fonts, out of 8000000 for 9000
+ 10817 strings out of 494910
+ 161681 string characters out of 6179836
+ 302711 words of memory out of 5000000
+ 13938 multiletter control sequences out of 15000+600000
+ 10123 words of font info for 36 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  36i,6n,38p,819b,960s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmti12.pfb>
-Output written on report.pdf (16 pages, 141170 bytes).
+pdfTeX warning (dest): name{chapter.12} has been referenced but does not exis
+t, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmti12.pfb>
+Output written on report.pdf (15 pages, 141506 bytes).
 PDF statistics:
  198 PDF objects out of 1000 (max. 8388607)
- 169 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
+ 170 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
  118 words of extra memory for PDF output out of 10000 (max. 10000000)
 
