@@ -1,0 +1,60 @@
+\subsection{Instagram}
+\begin{lstlisting}
+#!/usr/bin/env python
+import requests
+import pynfdump
+import json
+from xml.dom import minidom
+from pprint import pprint
+from datetime import datetime, timedelta
+import time
+import os
+import csv
+import socket
+from terminaltables import AsciiTable
+import json
+import re
+from lxml import html
+
+netflow_GMT = 3
+first_offset = 10
+last_offset = 20
+
+client_id = "3a064fe6d34a42d2a44c013b8ddd5ef7"
+client_secret = "712a7789c81942d086326bcd9dd8d272"
+access_token = "3955223166.3a064fe.2562f48363ac48f8b002f713fddeae2e"
+shortcode = "BNZWZtiAsT3"
+url = "https://www.instagram.com/p/BNYpYbSAcCz"
+html = html.fromstring(requests.get(url).content)
+script = html.xpath('//script[contains(., "window._sharedData")]/text()')[0]
+data = re.search(r"window._sharedData = (.*?);$", script).group(1)
+data = json.loads(data)
+pprint(data['entry_data']['PostPage'][0]['media']['date'])
+created_time = data['entry_data']['PostPage'][0]['media']['date']
+print "URL to analyze: " + url
+print "The post was created at " + str(datetime.fromtimestamp(int(created_time) + time.timezone).strftime('%Y/%m/%d.%H:%M:%S')) + " GMT"
+first_time = created_time - first_offset
+last_time = created_time + last_offset
+print "Getting the timerange from netflow dumps: before offset = " + str(first_offset) + " after offset = " + str(last_offset) + " GMT offset of netflow server = " + str(netflow_GMT)
+nfdump_string = "nfdump -R /var/flows/MYROUTER \"dst net 31.13.0.0/16 and port 443\" -o csv -t " + str(datetime.fromtimestamp(first_time + time.timezone + netflow_GMT * 3600).strftime('%Y/%m/%d.%H:%M:%S')) + "-" + str(datetime.fromtimestamp(last_time + time.timezone + netflow_GMT * 3600).strftime('%Y/%m/%d.%H:%M:%S')) + " -s record/bytes | head -n -3 | sed '1d'"
+print nfdump_string
+nfdump = os.popen(nfdump_string).read()
+nfdump_output = csv.reader(nfdump.split('\n'), delimiter=',')
+print "\n At this period of time the following IP addresses was going to instagram website: \n"
+for row in nfdump_output:
+	try:
+		hostname = socket.gethostbyaddr(row[4])[0]
+		if "instagram" in hostname:
+			print(row[0], row[3],row[4], row[5], row[12])
+	except:
+		shortcode = ""
+print "\n But only following ip addresses get enough bytes from the website: \n"
+nfdump_output = csv.reader(nfdump.split('\n'), delimiter=',')
+for row in nfdump_output:
+	try:
+		hostname = socket.gethostbyaddr(row[4])[0]
+		if "instagram" in hostname and int(row[12])>20000:
+			print(row[0], row[3],row[4], row[5], row[12])
+	except:
+		continue
+\end{lstlisting}
