@@ -1,5 +1,13 @@
 \section{Facebook}
-
-\subsection{Getting data from fb}
-\subsection{Find ip range of fb}
-\subsection{Experemental results}
+Facebook today it's largest and most famous social network with more than one billion active users peer month \cite{facebookStats}. Before April 30 2014 it was quite easy to get information about public available user posts. However when Facebook upgraded  Graph API to version 2 all applications now must get \textbf{User Access Token} token with \textbf{user\_posts} permission. If application don't get this permission empty data array will be returned. \par It's obvious what we try to reduce user interaction to minimum in our work. To do this we decide analyze HTML page.
+\subsection{Facebook HTML page}
+ All posts in facebook timeline returned in \texttt{<dig>} tag with "userContentWrapper \_5pcr" class. We are interested in nested tag \texttt{<abbr>} with class \_5ptz, this tag contain attribute \textbf{data-utime} which in turn contain timestamps of posts in Unix time format.
+ To get this tags in Python code I use combination of Selenium \cite{Selenium} and Phantom.js \cite{Phantomjs}.
+ \subsection{Program flow}
+ As input my program take link to Facebook account. To get all timestamps from user page we must be log in into Facebook. After we successfully log in, we try to download all dynamically loadable posts of that user. To do so we scroll down page until java-scripts download all available information. After that we get list with data-utime attributes. Now we have information about user time presence on page.
+ \subsection{Netflow: filtering and compare}
+ After we get all data-utime attribute, we should start thinking about reducing Netflow records. First step it's leave only those records which time coincidence with time presence. We can do this with pynfdump package for Python 2. We get all files with Netflow records with a five-minute offset relative to the time standing on the site, this needed because all Netflow records saved in files with the corresponding date of the name. Netflow collector save this files every five minutes, so all names multiple of five minutes. \par After getting all required files we additionally reduce amount of Netflow records. To do so we must know IP range of Facebook. As documented on Facebook's Developer site \cite{fbDevelop}, autonomous system AS32934 belongs to Facebook. To find IP range list we can use whois program:
+ \begin{lstlisting}
+    whois -h whois.radb.net -- '-i origin AS32934' \textbar grep \^{}route
+\end{lstlisting}
+Now we get only those records for which time coincides with data-utime attribute plus small offset necessary to compensate for the time delay in the network. \par On each value of data-utime attribute we get set of possible IP addresses. After finding all corresponding to data-utime IP sets we build massive with next structure: <IP address> - <Number of meetings in sets>, and sort this massive by number of meetings. On top we get IP addresses which correspond with the account more likely.
