@@ -10,16 +10,16 @@
 \contentsline {subsubsection}{Matching IP to profile by analyzing wall posts}{3}{subsubsection*.2}
 \contentsline {subsubsection}{Problems}{3}{subsubsection*.4}
 \contentsline {subsubsection}{Matching IP to profile while user is online}{4}{subsubsection*.6}
-\contentsline {section}{\numberline {7}Instagram}{4}{section.0.7}
-\contentsline {subsection}{\numberline {7.1}Getting data from Instagram}{4}{subsection.0.7.1}
+\contentsline {section}{\numberline {7}Instagram}{5}{section.0.7}
+\contentsline {subsection}{\numberline {7.1}Getting data from Instagram}{5}{subsection.0.7.1}
 \contentsline {subsection}{\numberline {7.2}Finding range of instagram ip}{6}{subsection.0.7.2}
 \contentsline {subsection}{\numberline {7.3}Extracting data from netflow}{6}{subsection.0.7.3}
-\contentsline {subsection}{\numberline {7.4}Experimental results}{6}{subsection.0.7.4}
-\contentsline {section}{\numberline {8}Facebook}{7}{section.0.8}
-\contentsline {subsection}{\numberline {8.1}Getting data from fb}{7}{subsection.0.8.1}
-\contentsline {subsection}{\numberline {8.2}Find ip range of fb}{7}{subsection.0.8.2}
-\contentsline {subsection}{\numberline {8.3}Experemental results}{7}{subsection.0.8.3}
-\contentsline {section}{\numberline {9}Results}{7}{section.0.9}
-\contentsline {section}{\numberline {10}Our programms}{7}{section.0.10}
-\contentsline {section}{\numberline {11}Conclusions}{7}{section.0.11}
-\contentsline {section}{\numberline {12}Acknowledgments}{7}{section.0.12}
+\contentsline {subsection}{\numberline {7.4}Experimental results}{7}{subsection.0.7.4}
+\contentsline {section}{\numberline {8}Facebook}{8}{section.0.8}
+\contentsline {subsection}{\numberline {8.1}Getting data from fb}{8}{subsection.0.8.1}
+\contentsline {subsection}{\numberline {8.2}Find ip range of fb}{8}{subsection.0.8.2}
+\contentsline {subsection}{\numberline {8.3}Experemental results}{8}{subsection.0.8.3}
+\contentsline {section}{\numberline {9}Results}{8}{section.0.9}
+\contentsline {section}{\numberline {10}Our programms}{8}{section.0.10}
+\contentsline {section}{\numberline {11}Conclusions}{8}{section.0.11}
+\contentsline {section}{\numberline {12}Acknowledgments}{8}{section.0.12}

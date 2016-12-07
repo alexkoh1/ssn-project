@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.22)  6 DEC 2016 11:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.22)  8 DEC 2016 00:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -415,20 +415,20 @@ Package csquotes Info: ... none found.
  (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -464,7 +464,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box35
-Package hyperref Info: Link coloring ON on input line 48.
+Package hyperref Info: Link coloring ON on input line 49.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -474,9 +474,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count143
 )
-LaTeX Info: Redefining \ref on input line 48.
-LaTeX Info: Redefining \pageref on input line 48.
-LaTeX Info: Redefining \nameref on input line 48.
+LaTeX Info: Redefining \ref on input line 49.
+LaTeX Info: Redefining \pageref on input line 49.
+LaTeX Info: Redefining \nameref on input line 49.
 
 (./report.out) (./report.out)
 \@outlinefile=\write3
@@ -527,37 +527,31 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.90 \begin{abstract}
+l.91 \begin{abstract}
                       [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.94 \end{abstract}
+l.95 \end{abstract}
                     [1]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 104.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 105.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 104.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 105.
  (./vk.texpdfTeX warning (ext4): destination with the same identifier (name{pag
 e.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.4 \subsection{Getting data from vk}
                                       [1]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ú in font cmr12!
@@ -595,12 +589,6 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no î in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no î in font cmr12!
  [2]
 <images/vk/wall.png, id=146, 612.78937pt x 331.2375pt>
 File: images/vk/wall.png Graphic file (type png)
@@ -609,30 +597,35 @@ File: images/vk/wall.png Graphic file (type png)
 Package pdftex.def Info: images/vk/wall.png used on input line 51.
 (pdftex.def)             Requested size: 512.1496pt x 276.85272pt.
 
+Overfull \hbox (4.08678pt too wide) in paragraph at lines 61--62
+[]\OT1/cmr/m/n/12 The third prob-lem, it can be less then 9 post with the same 
+IP ad-dresses (from di-a-gram [1?????????]
+ []
+
 <images/vk/users.png, id=147, 809.27344pt x 328.97906pt>
 File: images/vk/users.png Graphic file (type png)
 
 <use images/vk/users.png>
-Package pdftex.def Info: images/vk/users.png used on input line 65.
+Package pdftex.def Info: images/vk/users.png used on input line 66.
 (pdftex.def)             Requested size: 512.1496pt x 208.19661pt.
  [3 <./images/vk/wall.png (PNG copy)>]
 <images/vk/online.png, id=156, 660.96938pt x 336.50719pt>
 File: images/vk/online.png Graphic file (type png)
 
 <use images/vk/online.png>
-Package pdftex.def Info: images/vk/online.png used on input line 92.
+Package pdftex.def Info: images/vk/online.png used on input line 96.
 (pdftex.def)             Requested size: 512.1496pt x 260.74928pt.
-) (./instagram.tex [4 <./images/vk/users.png (PNG copy)>] <images/instagram/1.p
-ng, id=166, 731.73375pt x 280.04625pt>
+ [4 <./images/vk/users.png (PNG copy)>])
+(./instagram.tex <images/instagram/1.png, id=165, 731.73375pt x 280.04625pt>
 File: images/instagram/1.png Graphic file (type png)
 
 <use images/instagram/1.png>
 Package pdftex.def Info: images/instagram/1.png used on input line 21.
 (pdftex.def)             Requested size: 341.43306pt x 130.6731pt.
+ [5 <./images/vk/online.png (PNG copy)>]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
- [5 <./images/vk/online.png (PNG copy)> <./images/instagram/1.png>]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
@@ -641,27 +634,27 @@ Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
 Missing character: There is no — in font cmr12!
 Missing character: There is no Å in font cmr12!
- [6]) (./facebook.tex) (./bibliography.tex [7])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
- [8
+ [6 <./images/instagram/1.png>]) (./facebook.tex) (./bibliography.tex [7] [8])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 134.
+ [9
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 134.
 
 (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 134.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 134.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D664F5B7A55A75E365A2162BA9D5BF3C;1344.
  ) 
 Here is how much of TeX's memory you used:
- 10943 strings out of 494910
- 163877 string characters out of 6179836
- 372786 words of memory out of 5000000
- 14006 multiletter control sequences out of 15000+600000
+ 10945 strings out of 494910
+ 163900 string characters out of 6179836
+ 391824 words of memory out of 5000000
+ 14007 multiletter control sequences out of 15000+600000
  11778 words of font info for 42 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,7n,39p,1073b,1738s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,7n,39p,1145b,1728s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dis
@@ -670,10 +663,10 @@ t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
 public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/
 ucrr8a.pfb>
-Output written on report.pdf (11 pages, 244147 bytes).
+Output written on report.pdf (12 pages, 245365 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 248 compressed objects within 3 object streams
- 87 named destinations out of 1000 (max. 500000)
+ 280 PDF objects out of 1000 (max. 8388607)
+ 251 compressed objects within 3 object streams
+ 88 named destinations out of 1000 (max. 500000)
  197 words of extra memory for PDF output out of 10000 (max. 10000000)
 
