@@ -44,35 +44,35 @@ Vk.com has two ip range 87.240.128.0/18 and 95.213.0.0/18. To figure it out we f
 \subsection{Experimental results}
 For the experiments we created test profile https://vk.com/id396547478 and fill wall with some text posts in different times of days. For netflow collection we will use nfdump\cite{nfdump}, and for real test we will use real netflow traffic from university Innopolis. 
 \subsubsection{Matching IP to profile by analyzing wall posts}
-Wall post can be different format(music, video, link, repost, photo, text message, etc). The text posts is the popular one and it is very hard for analysis, because it is very similar to personal text message that people send to each other every second in private dialogs. So you can not see difference between them in the netflow traffic. We are lucky if a user posts photo, it has 3 fields that we can analyze: post publish time, photo upload time, photo size. But we will look only at difficult case when all post it is small text message similar to the message that users exchange in dialogs. If we able match IP in this case we will able do it in easier case, because text message posts has only one field for analysis: post publish time. For analyze of user wall post and netflow traffic was written program in python language that take last n post, get timestamp from it and for each timestamp it create list with all unique IP that do request to vk in this second($\pm$1 s.) Then it print IPs that was spotted in each list. In figure [1?????????] you can see we correlation between matched IP and number of post. 
+Wall post can be different format(music, video, link, repost, photo, text message, etc). The text posts is the popular one and it is very hard for analysis, because it is very similar to personal text message that people send to each other every second in private dialogs. So you can not see difference between them in the netflow traffic. We are lucky if a user posts photo, it has 3 fields that we can analyze: post publish time, photo upload time, photo size. But we will look only at difficult case when all post it is small text message similar to the message that users exchange in dialogs. If we able match IP in this case we will able do it in easier case, because text message posts has only one field for analysis: post publish time. For analyze of user wall post and netflow traffic was written program in python language that take last n post, get timestamp from it and for each timestamp it create list with all unique IP that do request to vk in this second($\pm$1 s.) Then it print IPs that was spotted in each list. In figure \ref{fig:wall} you can see we correlation between matched IP and number of post. 
  
 \begin{figure}[H]%\label{wall}   [\ref{wall}]
-	\centering{
+	\centering
 		\includegraphics[width=180mm]{images/vk/wall.png}
-		\caption{correlation between matched IP and number of post}
-	}
+	\caption{correlation between matched IP and number of post}
+	\label{fig:wall}
 \end{figure}
 
 \subsubsection{Problems}
 The main problem we did not know that the user post posts from the same ip, only that we can know it was or PC or mobile app. 
 
-The second main problem that we have too many active user in the same time. As you can see from figure [2????????] in peak time we have about 350 unique ip do request to vk server. 
+The second main problem that we have too many active user in the same time. As you can see from figure \ref{fig:users} in peak time we have about 350 unique ip do request to vk server. 
 
-The third problem, it can be less then 9 post with the same IP addresses (from diagram [1?????????] we saw that we need more then 9 post to match IP). User can do post from different locations, not only in work place and DHCP can change IP too often.
+The third problem, it can be less then 9 post with the same IP addresses (from diagram \ref{fig:wall} we saw that we need more then 9 post to match IP). User can do post from different locations, not only in work place and DHCP can change IP too often.
 
 Solutions for this problems will be consider in next section.
-\begin{figure}
-	\centering{
+\begin{figure}[H]
+	\centering
 		\includegraphics[width=180mm]{images/vk/users.png}
-		\caption{Number of vk active users in UI}
-	}
+	\caption{Number of vk active users in UI}
+	\label{fig:users}
 \end{figure}
 \subsubsection{Matching IP to profile while user is online}
-We can handle all problems that listed above by collecting enough data while user is onlaine. It is highly unlikely that user will post 9 post in his wall per one connections, but he can comment under some post or do post in another wall. But it still hard to collect and  analyze data. We can use social engineering and try to make chat with him, in this case each message can be considered as wall post message(each message has send timestamp like post publish(send) timestamp). But still it can fail if user will not answer. 
+We can handle all problems that listed above by collecting enough data while user is online. It is highly unlikely that user will post 9 post in his wall per one connections, but he can comment under some post or do post in another wall. But it still hard to collect and  analyze data. We can use social engineering and try to make chat with him, in this case each message can be considered as wall post message(each message has send timestamp like post publish(send) timestamp). But still it can fail if user will not answer. 
 
-After analyze of vk-API by me was found one bug in vk.com (or feature?). In vk page if user is offline in status bar we can see his last seen time, but this field is available from api even when user is online and it update after each activity of user(send message to smb, reload page, do comment or post, open smb page, etc). So we can see that user do something in the site, of curse we don't know what exactly he do, we can just guessing. But now we know what vk server receive some date from user in this exact time.
+After analyze of vk-API by me was found one bug in vk.com (or feature?). In vk page if user is offline in status bar we can see his last seen time, but this field is available from API even when user is online and it update after each activity of user(send message to smb, reload page, do comment or post, open smb page, etc). So we can see that user do something in the site, of curse we don't know what exactly he do, we can just guessing. But now we know what vk server receive some date from user in this exact time.
 
-For exploit this bug we will write two python script, one will check user last seen field and write it in the file each time it change, second program will analyze the file. Because all timestamp will be get in short period it is possible that a lot of another users has connections in this time (they can just watch film in vk) so we will need more timestamp, but now it is not a problem. The correlation between matched IP and number of timestamp you can see in figure [3??????]. In this figure was consider the case when user is texting with someone. We can see time of each message he send, usually people send 2-3 message per minute and we will get around 50 timestamps in 20 minutes. In this case we need only 42 time stamps to match the IP. 
+For exploit this bug we will write two python script, one will check user last seen field and write it in the file each time it change, second program will analyze the file. Because all timestamp will be get in short period it is possible that a lot of another users has connections in this time (they can just watch film in vk) so we will need more timestamp, but now it is not a problem. The correlation between matched IP and number of timestamp you can see in figure \ref{fig:online}. In this figure was consider the case when user is texting with someone. We can see time of each message he send, usually people send 2-3 message per minute and we will get around 50 timestamps in 20 minutes. In this case we need only 42 time stamps to match the IP. 
 
 Program usage:
 
@@ -92,10 +92,10 @@ Output:
 
 
 \begin{figure} [H]
-	\centering{
+	\centering
 		\includegraphics[width=180mm]{images/vk/online.png}
-		\caption{The correlation between matched IP and number of timestamp}
-	}
+	\caption{The correlation between matched IP and number of timestamp}
+	\label{fig:online}
 \end{figure}
 
 

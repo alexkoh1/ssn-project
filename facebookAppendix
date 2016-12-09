@@ -1,10 +1,5 @@
-\section{Facebook code}
-\begin{minted}[mathescape,
-               linenos,
-               numbersep=5pt,
-               gobble=2,
-               frame=lines,
-               framesep=2mm] {python}
+\subsection{Facebook code}
+\begin{lstlisting}
     import time
     import pynfdump
     from selenium import webdriver
@@ -119,5 +114,4 @@
             print i
         else:
             break
-
-\end{minted}
+\end{lstlisting}
