@@ -2,21 +2,19 @@
 \BOOKMARK [1][-]{section.0.2}{Related Work}{}% 2
 \BOOKMARK [1][-]{section.0.3}{Research question}{}% 3
 \BOOKMARK [1][-]{section.0.4}{Methodologies}{}% 4
-\BOOKMARK [1][-]{section.0.5}{Common things}{}% 5
-\BOOKMARK [1][-]{section.0.6}{VK}{}% 6
-\BOOKMARK [2][-]{subsection.0.6.1}{Getting data from vk}{section.0.6}% 7
-\BOOKMARK [2][-]{subsection.0.6.2}{Find ip range of vk}{section.0.6}% 8
-\BOOKMARK [2][-]{subsection.0.6.3}{Experimental results}{section.0.6}% 9
-\BOOKMARK [1][-]{section.0.7}{Instagram}{}% 10
-\BOOKMARK [2][-]{subsection.0.7.1}{Getting data from Instagram}{section.0.7}% 11
-\BOOKMARK [2][-]{subsection.0.7.2}{Finding range of instagram ip}{section.0.7}% 12
-\BOOKMARK [2][-]{subsection.0.7.3}{Extracting data from netflow}{section.0.7}% 13
-\BOOKMARK [2][-]{subsection.0.7.4}{Experimental results}{section.0.7}% 14
-\BOOKMARK [1][-]{section.0.8}{Facebook}{}% 15
-\BOOKMARK [2][-]{subsection.0.8.1}{Getting data from fb}{section.0.8}% 16
-\BOOKMARK [2][-]{subsection.0.8.2}{Find ip range of fb}{section.0.8}% 17
-\BOOKMARK [2][-]{subsection.0.8.3}{Experemental results}{section.0.8}% 18
-\BOOKMARK [1][-]{section.0.9}{Results}{}% 19
-\BOOKMARK [1][-]{section.0.10}{Our programms}{}% 20
-\BOOKMARK [1][-]{section.0.11}{Conclusions}{}% 21
-\BOOKMARK [1][-]{section.0.12}{Acknowledgments}{}% 22
+\BOOKMARK [1][-]{section.0.5}{VK}{}% 5
+\BOOKMARK [2][-]{subsection.0.5.1}{Getting data from vk}{section.0.5}% 6
+\BOOKMARK [2][-]{subsection.0.5.2}{Find ip range of vk}{section.0.5}% 7
+\BOOKMARK [2][-]{subsection.0.5.3}{Experimental results}{section.0.5}% 8
+\BOOKMARK [1][-]{section.0.6}{Instagram}{}% 9
+\BOOKMARK [2][-]{subsection.0.6.1}{Getting data from Instagram}{section.0.6}% 10
+\BOOKMARK [2][-]{subsection.0.6.2}{Finding range of instagram ip}{section.0.6}% 11
+\BOOKMARK [2][-]{subsection.0.6.3}{Extracting data from netflow}{section.0.6}% 12
+\BOOKMARK [2][-]{subsection.0.6.4}{Experimental results}{section.0.6}% 13
+\BOOKMARK [1][-]{section.0.7}{Facebook}{}% 14
+\BOOKMARK [2][-]{subsection.0.7.1}{Facebook HTML page}{section.0.7}% 15
+\BOOKMARK [2][-]{subsection.0.7.2}{Program flow}{section.0.7}% 16
+\BOOKMARK [2][-]{subsection.0.7.3}{Netflow: filtering and compare}{section.0.7}% 17
+\BOOKMARK [2][-]{subsection.0.7.4}{Experimental results}{section.0.7}% 18
+\BOOKMARK [1][-]{section.0.8}{Conclusions}{}% 19
+\BOOKMARK [1][-]{section.Alph0.1}{Our programms}{}% 20

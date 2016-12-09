@@ -6,7 +6,7 @@
 \usepackage{listings}
 \usepackage{caption}
 \usepackage{appendix}
-\usepackage{minted}
+%\usepackage{minted}
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{csquotes}
@@ -103,12 +103,18 @@ Mapping IP address to account on social network is generally believed to be diff
 Today we widely used Netflow analysis for security reasons [2][3]. But only recently science works was introduced whom main goal was – determine users action in social networks [4][5]. Unfortunately method who helped us to identify user never was introduced. In this paper we tried to find a solution for this problem.
 
 \section{Research question}
+Our research question is: 
+\begin{itemize}
+	\item{How to map ip addresses to profile in social network by analysing users activity? }
+\end{itemize}
+
+To answer this, the following subquestions should be answered:
 \begin{itemize}
 	\item{Find connection between user traffic and profile changes.}
 	\item{What sending data affects changes in profile?}
 	\item{How to analysis user's net-flow traffics?}
 	\item{How to analysis a profile in social network?}
-\end{itemize}ls
+\end{itemize}
 
 
 \section{Methodologies}
@@ -122,19 +128,30 @@ NetFlow is a feature that was introduced on Cisco routers that provides the abil
 We analysed netflow dumps in corporation environment and tried to check if connection was established in period of time and check presence of person in this time period on site. The main purpose is to find correlations between posted time and netflow traffic.
 
 
-\section{Common things}
+In this work each member of our research group takes responsibility for the most known social networks(vk.com[], instagram.com[], Fecebook.com[]).
+\bigbreak
+Team members contribution:
+\begin{itemize}
+	\item{V. Podtikhov - Facebook, Selenium+Phantomjs}
+	\item{B. Saifullin - VK, pynfdump}
+	\item{T. Samigullin - Instagram, Netflow sample.}
+\end{itemize}
+
+
+
+%\section{Common things}
 
 \input{vk}
 \input{instagram}
 \input{facebook}
 
-\section{Results}
-\section{Our programms}
+%\section{Results}
 \section{Conclusions}
-\section{Acknowledgments}
+%\section{Acknowledgments}
 \input{bibliography}
 \appendix
-\input{facebookAppendix}
+\section{Our programms}
+%\input{facebookAppendix}
 \end{document}
 
 
