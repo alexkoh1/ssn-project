@@ -11,3 +11,5 @@ Facebook today it's largest and most famous social network with more than one bi
     whois -h whois.radb.net -- '-i origin AS32934' \textbar grep \^{}route
 \end{lstlisting}
 Now we get only those records for which time coincides with data-utime attribute plus small offset necessary to compensate for the time delay in the network. \par On each value of data-utime attribute we get set of possible IP addresses. After finding all corresponding to data-utime IP sets we build massive with next structure: <IP address> - <Number of meetings in sets>, and sort this massive by number of meetings. On top we get IP addresses which correspond with the account more likely.
+\subsection{Conclusion}
+As may be seen, Fasebook appear very restricted and closed social network, atleast for third-party application. Facebook provide little information about his user for unauthorized applications. All we get from Facebook site it's only time posting of publicly avaible posts.
