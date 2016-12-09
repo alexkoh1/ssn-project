@@ -1,0 +1,278 @@
+\subsection{Vk}
+\subsubsection{Wal.py}
+\begin{lstlisting}
+#!/usr/bin/env python
+
+
+import sys
+import vk
+import datetime
+import time
+import signal
+import pynfdump
+import operator
+
+POST = 11
+SHOW = 1  # SHOW < POST
+PACKETS = 100  # Filter parameter 20
+FILTER = "dst net 87.240.128.0/18 or dst net 95.213.0.0/18"  # vk ip range
+
+def main():
+    if(len(sys.argv) < 2):
+        uid = input("id: ")
+    else:
+        uid = sys.argv[1]
+
+    nfStore = "/mnt/flows"
+    routerList = ['ROUTER']
+
+    session = vk.Session()
+    api = vk.API(session)
+    user = api.users.get(user_ids=uid, fields="online,last_seen")
+    # print user[0]['last_seen']['time']
+    # print user[0]['online']
+
+    last_seen = int(user[0]['last_seen']['time'])
+
+    print (datetime.datetime.fromtimestamp(last_seen).strftime('%Y-%m-%d %H:%M:%S'))
+
+    wall = api.wall.get(owner_id=uid, count=POST, filter="owner")
+
+    last_post = []
+
+    for i in range(0, POST):
+        last_post.append(wall[1+i]['date'])
+        print (str(i+1)+'. ' + datetime.datetime.fromtimestamp(last_post[i]).strftime('%Y-%m-%d %H:%M:%S'))
+
+
+
+
+    # wall
+    list_wall=[]
+    for i in range(0, POST):
+        d.set_where(
+            start=datetime.datetime.fromtimestamp(last_post[i]).strftime('%Y-%m-%d %H:') + str(calc_start(last_post[i])),
+            end=datetime.datetime.fromtimestamp(last_post[i]+300).strftime('%Y-%m-%d %H:') + str(calc_start(last_post[i]+300)))
+        records = d.search(FILTER)
+        list_w = []
+        for r in records:
+            if (int(r['first'].strftime('%s')) - 0) <= last_post[i] and last_post[i] <= (int(r['last'].strftime('%s')) + 1):
+                if r['srcip'] not in list_w and r['packets'] < PACKETS:
+                    list_w.append(r['srcip'])
+        print len(list_w), "matches by post :", i+1
+        #print list_w
+        list_wall.append(list_w)
+
+
+    user_ip = dict()
+    for i in range(0, POST):
+        for ip in list_wall[i]:
+            if ip not in user_ip:
+                user_ip[ip] = 0
+            else:
+                user_ip[ip] += 1
+    print len(user_ip), "total number ip in wall"
+
+
+
+    sorted_user_ip = sorted(user_ip.items(), key=operator.itemgetter(1), reverse=True)
+
+    c = 0
+    for ip in sorted_user_ip:
+        if ip[1] >= (POST - SHOW): 
+            c += 1
+            print c, "%-13s" % ip[0], "\t%i/%i" % (ip[1] + 1, POST), "%i%s" % ((ip[1] + 2.0)/(POST+1) * 100, '%')
+
+
+
+def calc_start(time):
+    minute_start1 = (int(datetime.datetime.fromtimestamp(time).strftime('%M')) / 5) * 5
+    return minute_start1
+
+
+def signal_handler(signal, frame):
+    print('You pressed Ctrl+C!')
+    sys.exit(0)
+
+
+if __name__ == "__main__":
+    signal.signal(signal.SIGINT, signal_handler)
+    sys.exit(main())
+\end{lstlisting}
+
+\subsubsection{user{\_}follow{\_}file.py}
+\begin{lstlisting}
+#!/usr/bin/env python
+
+from __future__ import print_function
+
+import sys
+import vk
+import datetime
+import time
+import signal
+import pynfdump
+import time
+import glob
+
+FLAG = True
+
+def main():
+    if(len(sys.argv) < 2):
+        uid = input("id: ")      
+    else:
+        uid = sys.argv[1]
+
+    session = vk.Session()
+    api = vk.API(session)
+    user = api.users.get(user_ids=uid, fields="online,last_seen")
+    filename = user[0]['first_name']+"_"+user[0]['last_name']+".txt"
+    # print (filename)
+
+    if int(user[0]['online']) == 1:
+        print (user[0]['first_name']+" is "+'online')
+    else:
+        print (user[0]['first_name']+" is "'offline')
+
+    last_seen = int(user[0]['last_seen']['time'])
+
+    print (datetime.datetime.fromtimestamp(last_seen).strftime('%Y-%m-%d %H:%M:%S'))
+
+    # f = open("last_seen_time.txt", "a")
+
+    # print(last_seen, file=f)
+    old = last_seen
+    platform = user[0]['last_seen']['platform']
+    print ("Platform:", platform)
+    global FLAG
+    while FLAG:  # and user[0]['last_seen']['platform'] == 7 : # full web version
+        try:
+            user = api.users.get(user_ids=uid, fields="online,last_seen")
+        except:
+            print ("Some thing wrong with api:(")
+
+        if platform != user[0]['last_seen']['platform']:
+            print(user[0]['first_name'], "change the device")
+            break
+
+        new = user[0]['last_seen']['time']
+        if old < new:
+            f = open(filename, "a")
+
+            print(new, file=f)
+
+            f.close()
+            print (datetime.datetime.fromtimestamp(new).strftime('%Y-%m-%d %H:%M:%S'), "(%i)" % new)
+            old = new
+
+        time.sleep(0.9)
+        if int(user[0]['online']) == 0:
+            print ("User offline")
+            time.sleep(5.9)
+            #FLAG = False
+
+
+def signal_handler(signal, frame):
+    global FLAG
+    FLAG = False
+    print('You pressed Ctrl+C!')
+    # sys.exit(0)
+
+
+if __name__ == "__main__":
+    signal.signal(signal.SIGINT, signal_handler)
+    sys.exit(main())
+
+\end{lstlisting}
+\subsubsection{last{\_}seen{\_}analaser.py}
+\begin{lstlisting}
+#!/usr/bin/env python
+
+import sys
+import vk
+import datetime
+import time
+import signal
+import pynfdump
+import glob
+import operator
+
+
+SHOW = 5
+PACKETS = 50  # Filter parameter
+
+def main():
+    if len(sys.argv) < 2:
+        uid = input("id: ")
+    else:
+        uid = sys.argv[1]
+
+    nfStore = "/mnt/flows"
+    routerList = ['ROUTER']
+
+    session = vk.Session()
+    api = vk.API(session)
+
+    filename='last_seen_time.txt'
+    user = api.users.get(user_ids=uid, fields="online,last_seen")
+    filename = user[0]['first_name']+"_"+user[0]['last_name']+".txt"
+
+    lines = [line.rstrip('\n') for line in open(filename)]
+    print lines
+
+    d = pynfdump.Dumper(nfStore, sources=routerList)
+
+    print len(lines), "lines in file"
+
+    list_wall = []
+    for t in lines:
+        list_w = []
+        d.set_where(
+            start=datetime.datetime.fromtimestamp(int(t)).strftime('%Y-%m-%d %H:') + str(calc_start(int(t))),
+            end=datetime.datetime.fromtimestamp(int(t)+300).strftime('%Y-%m-%d %H:') + str(calc_start(int(t)+300)))
+        records = d.search("dst net 87.240.128.0/18 or dst net 95.213.0.0/18")
+        for r in records:
+            if (int(r['first'].strftime('%s')) - 0) <= int(t) <= (int(r['last'].strftime('%s')) + 1):
+                if r['srcip'] not in list_w and r['packets'] < PACKETS:
+                    list_w.append(r['srcip'])
+        print len(list_w), "matches by time:", datetime.datetime.fromtimestamp(int(t)).strftime('%Y-%m-%d %H:%M:%S')
+        # print list_w
+        list_wall.append(list_w)
+
+    user_ip = dict()
+    for i in range(0, len(lines)):
+        for ip in list_wall[i]:
+            if ip not in user_ip:
+                user_ip[ip] = 0
+            else:
+                user_ip[ip] += 1
+    print len(user_ip), "total number ip in wall"
+
+    sorted_user_ip = sorted(user_ip.items(), key=operator.itemgetter(1), reverse=True)
+
+    c = 0
+    for ip in sorted_user_ip:
+        c += 1
+        if ip[1] >= (len(lines) - SHOW):
+            print c, "%-13s" % ip[0], "\t%i/%i" % (ip[1] + 1, len(lines)), "%i%s" % ((ip[1] + 1.0)/(len(lines)) * 100, '%')
+        else:
+            break
+
+
+
+def calc_start(time):
+    minute_start1 = (int(datetime.datetime.fromtimestamp(time).strftime('%M')) / 5) * 5
+    return minute_start1
+
+
+def signal_handler(signal, frame):
+    print('You pressed Ctrl+C!')
+    sys.exit(0)
+
+if __name__ == "__main__":
+    signal.signal(signal.SIGINT, signal_handler)
+    sys.exit(main())
+
+\end{lstlisting}
+
+
