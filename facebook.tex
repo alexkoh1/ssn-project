@@ -1,4 +1,5 @@
 \section{Facebook}
+
 Facebook today it's the largest and most famous social network with more than one billion active users per month \cite{facebookStats}. Before April 30 2014 it was quite easy to get information about public available user posts. However when Facebook upgraded  Graph API to version 2 all applications now must get \textbf{User Access Token} token with \textbf{user\_posts} permission. If application don't get this permission empty data array will be returned. \par It's obvious what we try to reduce user interaction to minimum in our work. To do this we decide analyze HTML page.
 \subsection{Facebook HTML page}
  All posts in facebook timeline returned in \texttt{<dig>} tag with "userContentWrapper \_5pcr" class. We are interested in nested tag \texttt{<abbr>} with class \_5ptz, this tag contain attribute \textbf{data-utime} which in turn contain timestamps of posts in Unix time format.
@@ -13,4 +14,4 @@ Facebook today it's the largest and most famous social network with more than on
 Now we get only those records for which time coincides with data-utime attribute plus small offset necessary to compensate for the time delay in the network. \par On each value of data-utime attribute we get set of possible IP addresses. After finding all corresponding to data-utime IP sets we build massive with next structure: 
 \texttt{<IP address> - <Number of meetings in sets>}, and sort this massive by number of meetings. On top we get IP addresses which correspond with the account more likely.
 \subsection{Experimental results}
-As may be seen, Fasebook appear very restricted and closed social network, atleast for third-party application. Facebook provide little information about his user for unauthorized applications. All we get from Facebook site it's only time posting of publicly avaible posts.
+As may be seen, Fasebook appear very restricted and closed social network, at least for third-party application. Facebook provide little information about his user for unauthorized applications. All we get from Facebook site it's only time posting of publicly available posts.

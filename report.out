@@ -4,11 +4,11 @@
 \BOOKMARK [1][-]{section.0.4}{Methodologies}{}% 4
 \BOOKMARK [1][-]{section.0.5}{VK}{}% 5
 \BOOKMARK [2][-]{subsection.0.5.1}{Getting data from vk}{section.0.5}% 6
-\BOOKMARK [2][-]{subsection.0.5.2}{Find ip range of vk}{section.0.5}% 7
+\BOOKMARK [2][-]{subsection.0.5.2}{Find IP range of vk}{section.0.5}% 7
 \BOOKMARK [2][-]{subsection.0.5.3}{Experimental results}{section.0.5}% 8
 \BOOKMARK [1][-]{section.0.6}{Instagram}{}% 9
 \BOOKMARK [2][-]{subsection.0.6.1}{Getting data from Instagram}{section.0.6}% 10
-\BOOKMARK [2][-]{subsection.0.6.2}{Finding range of instagram IP}{section.0.6}% 11
+\BOOKMARK [2][-]{subsection.0.6.2}{Finding range of Instagram IP}{section.0.6}% 11
 \BOOKMARK [2][-]{subsection.0.6.3}{Extracting data from netflow}{section.0.6}% 12
 \BOOKMARK [2][-]{subsection.0.6.4}{Experimental results}{section.0.6}% 13
 \BOOKMARK [1][-]{section.0.7}{Facebook}{}% 14
